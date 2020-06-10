@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru_RU">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Конструктор SQL "SQL Builder" | 火信 - </title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://m1ku430.github.io/hexo-docs/ru_RU/docs/sql_builder.html">
+  <!-- Alternative links -->
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/hexo-docs/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/hexo-docs/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/hexo-docs/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/hexo-docs/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/hexo-docs/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/hexo-docs/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/hexo-docs/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/hexo-docs/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/hexo-docs/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/hexo-docs/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/hexo-docs/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/hexo-docs/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/hexo-docs/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/hexo-docs/icon/mstile-144x144.png">
+  <meta name="generator" content="Hexo 4.2.1">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/hexo-docs/css/navy.css">
+
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <!-- RSS -->
+  <link rel="alternate" href="/hexo-docs/atom.xml" title="火信">
+  <!-- Open Graph -->
+  <meta name="description" content="Запуск сырого SQLЗапуск сырого SQL, который не может быть связан с другими методами 1234567891011db.Exec(&quot;DROP TABLE users;&quot;)db.Exec(&quot;UPDATE orders SET shipped_at&#x3D;? WHERE id IN (?)&quot;, time.Now(), []int">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Конструктор SQL &quot;SQL Builder&quot;">
+<meta property="og:url" content="https://m1ku430.github.io/hexo-docs/ru_RU/docs/sql_builder.html">
+<meta property="og:site_name" content="火信">
+<meta property="og:description" content="Запуск сырого SQLЗапуск сырого SQL, который не может быть связан с другими методами 1234567891011db.Exec(&quot;DROP TABLE users;&quot;)db.Exec(&quot;UPDATE orders SET shipped_at&#x3D;? WHERE id IN (?)&quot;, time.Now(), []int">
+<meta property="og:locale" content="ru_RU">
+<meta property="article:published_time" content="2020-06-10T06:04:00.722Z">
+<meta property="article:modified_time" content="2020-06-09T12:46:03.253Z">
+<meta property="article:author" content="Huoxin">
+<meta name="twitter:card" content="summary">
+  <!-- Google Tag Manager -->
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/ru_RU/hexo-docs/" id="logo">火信</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/hexo-docs/ru_RU/docs/" class="main-nav-link"><i class="fa fa-book"></I>Документация</a><a href="/hexo-docs/ru_RU/community.html" class="main-nav-link"><i class="fa fa-slack"></I>Сообщество</a><a href="/hexo-docs/ru_RU/contribute.html" class="main-nav-link"><i class="fa fa-rocket"></I>Поддержать</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Поиск...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>ru_RU</span></label>
+      <select id="lang-select" data-canonical="docs/sql_builder.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh_CN">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Конструктор SQL "SQL Builder"</h1>
+                <a href="https://github.com/jinzhu/gorm.io/edit/master/pages/ru_RU/docs/sql_builder.md" target="_blank" rel="noopener" class="article-edit-link" title="Улучшить этот раздел"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="Запуск-сырого-SQL" class="article-heading"><a href="#Запуск-сырого-SQL" class="headerlink" title="Запуск сырого SQL"></a>Запуск сырого SQL<a class="article-anchor" href="#Запуск-сырого-SQL" aria-hidden="true"></a></h2><p>Запуск сырого SQL, который не может быть связан с другими методами</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">db.Exec(<span class="string">"DROP TABLE users;"</span>)</span><br><span class="line">db.Exec(<span class="string">"UPDATE orders SET shipped_at=? WHERE id IN (?)"</span>, time.Now(), []<span class="keyword">int64</span>&#123;<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Scan</span></span><br><span class="line"><span class="keyword">type</span> Result <span class="keyword">struct</span> &#123;</span><br><span class="line">  Name <span class="keyword">string</span></span><br><span class="line">  Age  <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result Result</span><br><span class="line">db.Raw(<span class="string">"SELECT name, age FROM users WHERE name = ?"</span>, <span class="number">3</span>).Scan(&amp;result)</span><br></pre></td></tr></table></figure>
+
+<h2 id="sql-Row-amp-sql-Rows" class="article-heading"><a href="#sql-Row-amp-sql-Rows" class="headerlink" title="sql.Row &amp; sql.Rows"></a><code>sql.Row</code> &amp; <code>sql.Rows</code><a class="article-anchor" href="#sql-Row-amp-sql-Rows" aria-hidden="true"></a></h2><p>Получить результат запроса в формате <code>*sql.Row</code> или <code>*sql.Rows</code></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">row := db.Table(<span class="string">"users"</span>).Where(<span class="string">"name = ?"</span>, <span class="string">"jinzhu"</span>).Select(<span class="string">"name, age"</span>).Row() <span class="comment">// (*sql.Row)</span></span><br><span class="line">row.Scan(&amp;name, &amp;age)</span><br><span class="line"></span><br><span class="line">rows, err := db.Model(&amp;User&#123;&#125;).Where(<span class="string">"name = ?"</span>, <span class="string">"jinzhu"</span>).Select(<span class="string">"name, age, email"</span>).Rows() <span class="comment">// (*sql.Rows, error)</span></span><br><span class="line"><span class="keyword">defer</span> rows.Close()</span><br><span class="line"><span class="keyword">for</span> rows.Next() &#123;</span><br><span class="line">  ...</span><br><span class="line">  rows.Scan(&amp;name, &amp;age, &amp;email)</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Raw SQL</span></span><br><span class="line">rows, err := db.Raw(<span class="string">"select name, age, email from users where name = ?"</span>, <span class="string">"jinzhu"</span>).Rows() <span class="comment">// (*sql.Rows, error)</span></span><br><span class="line"><span class="keyword">defer</span> rows.Close()</span><br><span class="line"><span class="keyword">for</span> rows.Next() &#123;</span><br><span class="line">  ...</span><br><span class="line">  rows.Scan(&amp;name, &amp;age, &amp;email)</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Сканировать-sql-Rows-в-модель" class="article-heading"><a href="#Сканировать-sql-Rows-в-модель" class="headerlink" title="Сканировать sql.Rows в модель"></a>Сканировать <code>sql.Rows</code> в модель<a class="article-anchor" href="#Сканировать-sql-Rows-в-модель" aria-hidden="true"></a></h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rows, err := db.Model(&amp;User&#123;&#125;).Where(<span class="string">"name = ?"</span>, <span class="string">"jinzhu"</span>).Select(<span class="string">"name, age, email"</span>).Rows() <span class="comment">// (*sql.Rows, error)</span></span><br><span class="line"><span class="keyword">defer</span> rows.Close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> rows.Next() &#123;</span><br><span class="line">  <span class="keyword">var</span> user User</span><br><span class="line">  <span class="comment">// ScanRows сканирует строку в user</span></span><br><span class="line">  db.ScanRows(rows, &amp;user)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// что-то делаем</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2020-06-09T12:46:03.253Z" itemprop="dateModified">Последнее обновление: 2020-06-09</time>
+<a href="migration.html" class="article-footer-prev" title="Миграции"><i class="fa fa-chevron-left"></i><span>Назад</span></a><a href="generic_interface.html" class="article-footer-next" title="Нативный интерфейс БД"><span>Далее</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+
+              <strong class="sidebar-title">Содержание</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Запуск-сырого-SQL"><span class="toc-text">Запуск сырого SQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql-Row-amp-sql-Rows"><span class="toc-text">sql.Row &amp; sql.Rows</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Сканировать-sql-Rows-в-модель"><span class="toc-text">Сканировать sql.Rows в модель</span></a></li></ol>
+              <a href="#" id="article-toc-top">Вернуться к началу</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">С чего начать?</strong><a href="index.html" class="sidebar-link">Общие сведения</a><a href="models.html" class="sidebar-link">Объявление моделей</a><a href="conventions.html" class="sidebar-link">Определения</a><a href="connecting_to_the_database.html" class="sidebar-link">Подключение к базе данных</a><strong class="sidebar-title">CRUD интерфейс</strong><a href="create.html" class="sidebar-link">Создание</a><a href="query.html" class="sidebar-link">Запрос</a><a href="update.html" class="sidebar-link">Обновление</a><a href="delete.html" class="sidebar-link">Удаление</a><strong class="sidebar-title">Связи</strong><a href="belongs_to.html" class="sidebar-link">Belongs To</a><a href="has_one.html" class="sidebar-link">Has One</a><a href="has_many.html" class="sidebar-link">Has Many</a><a href="many_to_many.html" class="sidebar-link">Many To Many</a><a href="associations.html" class="sidebar-link">Связи</a><a href="preload.html" class="sidebar-link">Подгрузка данных(Жадная загрузка)</a><strong class="sidebar-title">Туториалы</strong><a href="method_chaining.html" class="sidebar-link">Цепочка вызовов</a><a href="error_handling.html" class="sidebar-link">Обработка ошибок</a><a href="hooks.html" class="sidebar-link">Хуки</a><a href="transactions.html" class="sidebar-link">Транзакции</a><a href="migration.html" class="sidebar-link">Миграции</a><a href="sql_builder.html" class="sidebar-link current">Чистый SQL и SQL Builder</a><a href="generic_interface.html" class="sidebar-link">Нативный интерфейс БД</a><strong class="sidebar-title">Дополнительные возможности</strong><a href="composite_primary_key.html" class="sidebar-link">Составной первичный ключ</a><a href="write_plugins.html" class="sidebar-link">Плагины (Колбеки)</a><a href="dialects.html" class="sidebar-link">Поддерживаемые БД</a><a href="logger.html" class="sidebar-link">Логирование</a><a href="changelog.html" class="sidebar-link">История изменений</a><a href="/community.html" class="sidebar-link">Сообщество</a><a href="/contribute.html" class="sidebar-link">Сделать вклад</a><a href="/contribute.html#Translate-this-site" class="sidebar-link">Перевод текущего сайта</a>
+  </div>
+</aside>
+
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2013~2020 <a href="" target="_blank">Huoxin</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.<br>
+      <a href="https://github.com/m1ku430" target="_blank">Source Code of this site</a>
+    </div>
+    <div id="footer-links">
+
+      <a href="https://github.com/" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <li class="mobile-nav-item">
+        <a href="/" class="mobile-nav-link" rel="external" target="_blank"><i class="fa fa-home"></I>Главная</a>
+      </li>
+      <a href="/hexo-docs/ru_RU/docs/" class="mobile-nav-link"><i class="fa fa-book"></I>Документация</a><a href="/hexo-docs/ru_RU/community.html" class="mobile-nav-link"><i class="fa fa-slack"></I>Сообщество</a><a href="/hexo-docs/ru_RU/contribute.html" class="mobile-nav-link"><i class="fa fa-rocket"></I>Поддержать</a>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>ru_RU</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/sql_builder.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh_CN">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+
+<script src="/hexo-docs/js/lang_select.js"></script>
+
+
+<script src="/hexo-docs/js/toc.js"></script>
+
+
+<script src="/hexo-docs/js/mobile_nav.js"></script>
+
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script src="/hexo-docs/js/code_expander.js"></script>
+
+
+<script src="/hexo-docs/js/404_fix.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+
+
+
+</body>
+</html>
