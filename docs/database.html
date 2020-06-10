@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_CN">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
   <title>Connecting to the database | 火信 - </title>
@@ -50,7 +50,7 @@
 <meta property="og:url" content="https://m1ku430.github.io/hexo-docs/docs/database.html">
 <meta property="og:site_name" content="火信">
 <meta property="og:description" content="Connecting to the databaseIn order to connect to a database, you need to import the database’s driver first. For example: 1import _ &quot;github.com&#x2F;go-sql-driver&#x2F;mysql&quot;  GORM has wrapped some drivers to m">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-10T07:09:24.327Z">
 <meta property="article:modified_time" content="2020-06-10T07:09:24.327Z">
 <meta property="article:author" content="Huoxin">
@@ -65,24 +65,24 @@
     <header id="header" class="wrapper">
   <div id="header-inner" class="inner">
     <h1 id="logo-wrap">
-      <a href="/hexo-docs/" id="logo">火信</a>
+      <a href="/zh_CN/hexo-docs/" id="logo">火信</a>
     </h1>
     <nav id="main-nav">
-      <a href="/hexo-docs/docs/" class="main-nav-link"><i class="fa fa-book"></i>Docs</a><a href="/hexo-docs/community.html" class="main-nav-link"><i class="fa fa-slack"></i>Community</a><a href="/hexo-docs/contribute.html" class="main-nav-link"><i class="fa fa-rocket"></i>Contribute</a>
+      <a href="/hexo-docs/zh_CN/docs/" class="main-nav-link"><i class="fa fa-book"></i>文档</a><a href="/hexo-docs/zh_CN/community.html" class="main-nav-link"><i class="fa fa-slack"></i>社区</a><a href="/hexo-docs/zh_CN/contribute.html" class="main-nav-link"><i class="fa fa-rocket"></i>贡献</a>
       <div id="search-input-wrap">
         <div id="search-input-icon">
           <i class="fa fa-search"></i>
         </div>
-        <input type="search" id="search-input" placeholder="Search documents...">
+        <input type="search" id="search-input" placeholder="搜索文档...">
       </div>
     </nav>
     <div id="lang-select-wrap">
-      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
       <select id="lang-select" data-canonical="docs/database.html">
         
-          <option value="zh_CN">简体中文</option>
+          <option value="zh_CN" selected>简体中文</option>
         
-          <option value="en" selected>English</option>
+          <option value="en">English</option>
         
       </select>
     </div>
@@ -103,7 +103,7 @@
             <div class="inner">
               <header class="article-header">
                 <h1 class="article-title" itemprop="name">Connecting to the database</h1>
-                <a href="https://github.com/jinzhu/gorm.io/edit/master/pages/docs/database.md" target="_blank" rel="noopener" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+                <a href="https://github.com/jinzhu/gorm.io/edit/master/pages/docs/database.md" target="_blank" rel="noopener" class="article-edit-link" title="改进此文档"><i class="fa fa-pencil"></i></a>
               </header>
               <div class="article-content" itemprop="articleBody">
                 <h1 id="Connecting-to-the-database" class="article-heading"><a href="#Connecting-to-the-database" class="headerlink" title="Connecting to the database"></a>Connecting to the database<a class="article-anchor" href="#Connecting-to-the-database" aria-hidden="true"></a></h1><p>In order to connect to a database, you need to import the database’s driver first. For example:</p>
@@ -128,8 +128,8 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2020-06-10T07:09:24.327Z" itemprop="dateModified">Last updated: 2020-06-10</time>
-<a href="index.html" class="article-footer-next" title="Overview"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+                <time class="article-footer-updated" datetime="2020-06-10T07:09:24.327Z" itemprop="dateModified">最后更新于 2020-06-10</time>
+<a href="index.html" class="article-footer-next" title="概览"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
 
@@ -138,16 +138,16 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
 
-              <strong class="sidebar-title">Contents</strong>
+              <strong class="sidebar-title">内容</strong>
               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Connecting-to-the-database"><span class="toc-text">Connecting to the database</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL"><span class="toc-text">MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PostgreSQL"><span class="toc-text">PostgreSQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sqlite3"><span class="toc-text">Sqlite3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL-Server"><span class="toc-text">SQL Server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Write-Dialect-for-unsupported-databases"><span class="toc-text">Write Dialect for unsupported databases</span></a></li></ol></li></ol>
-              <a href="#" id="article-toc-top">Back to Top</a>
+              <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
         </div>
       </article>
       <aside id="sidebar" role="navigation">
   <div class="inner">
-    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Overview</a><a href="models.html" class="sidebar-link">Declaring Models</a><a href="conventions.html" class="sidebar-link">Conventions</a><a href="connecting_to_the_database.html" class="sidebar-link">Connecting to Database</a><strong class="sidebar-title">CRUD Interface</strong><a href="create.html" class="sidebar-link">Create</a><a href="query.html" class="sidebar-link">Query</a><a href="update.html" class="sidebar-link">Update</a><a href="delete.html" class="sidebar-link">Delete</a><strong class="sidebar-title">Associations</strong><a href="belongs_to.html" class="sidebar-link">Belongs To</a><a href="has_one.html" class="sidebar-link">Has One</a><a href="has_many.html" class="sidebar-link">Has Many</a><a href="many_to_many.html" class="sidebar-link">Many To Many</a><a href="associations.html" class="sidebar-link">Associations</a><a href="preload.html" class="sidebar-link">Preloading (Eager Loading)</a><strong class="sidebar-title">Tutorials</strong><a href="method_chaining.html" class="sidebar-link">Method Chaining</a><a href="error_handling.html" class="sidebar-link">Error Handling</a><a href="hooks.html" class="sidebar-link">Hooks</a><a href="transactions.html" class="sidebar-link">Transactions</a><a href="migration.html" class="sidebar-link">Migration</a><a href="sql_builder.html" class="sidebar-link">Raw SQL and SQL Builder</a><a href="generic_interface.html" class="sidebar-link">Generic Database Interface</a><strong class="sidebar-title">Advanced Topics</strong><a href="composite_primary_key.html" class="sidebar-link">Composite Primary Key</a><a href="write_plugins.html" class="sidebar-link">Write Plugins</a><a href="dialects.html" class="sidebar-link">GORM Dialects</a><a href="logger.html" class="sidebar-link">Logger</a><a href="changelog.html" class="sidebar-link">ChangeLog</a><a href="/community.html" class="sidebar-link">Community</a><a href="/contribute.html" class="sidebar-link">Contribute</a><a href="/contribute.html#Translate-this-site" class="sidebar-link">Translate current site</a>
+    <strong class="sidebar-title">入门指南</strong><a href="index.html" class="sidebar-link">概览</a><a href="models.html" class="sidebar-link">模型定义</a><a href="conventions.html" class="sidebar-link">惯例</a><a href="connecting_to_the_database.html" class="sidebar-link">连接数据库</a><strong class="sidebar-title">CRUD 接口</strong><a href="create.html" class="sidebar-link">创建</a><a href="query.html" class="sidebar-link">查询</a><a href="update.html" class="sidebar-link">更新</a><a href="delete.html" class="sidebar-link">删除</a><strong class="sidebar-title">关联</strong><a href="belongs_to.html" class="sidebar-link">Belongs To</a><a href="has_one.html" class="sidebar-link">Has One</a><a href="has_many.html" class="sidebar-link">Has Many</a><a href="many_to_many.html" class="sidebar-link">Many To Many</a><a href="associations.html" class="sidebar-link">关联</a><a href="preload.html" class="sidebar-link">预加载</a><strong class="sidebar-title">教程</strong><a href="method_chaining.html" class="sidebar-link">链式操作</a><a href="error_handling.html" class="sidebar-link">错误处理</a><a href="hooks.html" class="sidebar-link">钩子</a><a href="transactions.html" class="sidebar-link">事务</a><a href="migration.html" class="sidebar-link">数据库迁移</a><a href="sql_builder.html" class="sidebar-link">原生 SQL 和 SQL 生成器</a><a href="generic_interface.html" class="sidebar-link">通用数据库接口</a><strong class="sidebar-title">高级主题</strong><a href="composite_primary_key.html" class="sidebar-link">复合主键</a><a href="write_plugins.html" class="sidebar-link">创建插件</a><a href="dialects.html" class="sidebar-link">GORM Dialects</a><a href="logger.html" class="sidebar-link">自定义Logger</a><a href="changelog.html" class="sidebar-link">更新日志</a><a href="/community.html" class="sidebar-link">社区</a><a href="/contribute.html" class="sidebar-link">贡献</a><a href="/contribute.html#Translate-this-site" class="sidebar-link">翻译当前页面</a>
   </div>
 </aside>
 
@@ -175,21 +175,21 @@
   <div id="mobile-nav-inner">
     <ul id="mobile-nav-list">
       <li class="mobile-nav-item">
-        <a href="/" class="mobile-nav-link" rel="external" target="_blank"><i class="fa fa-home"></i>Home</a>
+        <a href="/" class="mobile-nav-link" rel="external" target="_blank"><i class="fa fa-home"></i>首页</a>
       </li>
-      <a href="/hexo-docs/docs/" class="mobile-nav-link"><i class="fa fa-book"></i>Docs</a><a href="/hexo-docs/community.html" class="mobile-nav-link"><i class="fa fa-slack"></i>Community</a><a href="/hexo-docs/contribute.html" class="mobile-nav-link"><i class="fa fa-rocket"></i>Contribute</a>
+      <a href="/hexo-docs/zh_CN/docs/" class="mobile-nav-link"><i class="fa fa-book"></i>文档</a><a href="/hexo-docs/zh_CN/community.html" class="mobile-nav-link"><i class="fa fa-slack"></i>社区</a><a href="/hexo-docs/zh_CN/contribute.html" class="mobile-nav-link"><i class="fa fa-rocket"></i>贡献</a>
     </ul>
     
-      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Overview</a><a href="models.html" class="mobile-nav-link">Declaring Models</a><a href="conventions.html" class="mobile-nav-link">Conventions</a><a href="connecting_to_the_database.html" class="mobile-nav-link">Connecting to Database</a><strong class="mobile-nav-title">CRUD Interface</strong><a href="create.html" class="mobile-nav-link">Create</a><a href="query.html" class="mobile-nav-link">Query</a><a href="update.html" class="mobile-nav-link">Update</a><a href="delete.html" class="mobile-nav-link">Delete</a><strong class="mobile-nav-title">Associations</strong><a href="belongs_to.html" class="mobile-nav-link">Belongs To</a><a href="has_one.html" class="mobile-nav-link">Has One</a><a href="has_many.html" class="mobile-nav-link">Has Many</a><a href="many_to_many.html" class="mobile-nav-link">Many To Many</a><a href="associations.html" class="mobile-nav-link">Associations</a><a href="preload.html" class="mobile-nav-link">Preloading (Eager Loading)</a><strong class="mobile-nav-title">Tutorials</strong><a href="method_chaining.html" class="mobile-nav-link">Method Chaining</a><a href="error_handling.html" class="mobile-nav-link">Error Handling</a><a href="hooks.html" class="mobile-nav-link">Hooks</a><a href="transactions.html" class="mobile-nav-link">Transactions</a><a href="migration.html" class="mobile-nav-link">Migration</a><a href="sql_builder.html" class="mobile-nav-link">Raw SQL and SQL Builder</a><a href="generic_interface.html" class="mobile-nav-link">Generic Database Interface</a><strong class="mobile-nav-title">Advanced Topics</strong><a href="composite_primary_key.html" class="mobile-nav-link">Composite Primary Key</a><a href="write_plugins.html" class="mobile-nav-link">Write Plugins</a><a href="dialects.html" class="mobile-nav-link">GORM Dialects</a><a href="logger.html" class="mobile-nav-link">Logger</a><a href="changelog.html" class="mobile-nav-link">ChangeLog</a><a href="/community.html" class="mobile-nav-link">Community</a><a href="/contribute.html" class="mobile-nav-link">Contribute</a><a href="/contribute.html#Translate-this-site" class="mobile-nav-link">Translate current site</a>
+      <strong class="mobile-nav-title">入门指南</strong><a href="index.html" class="mobile-nav-link">概览</a><a href="models.html" class="mobile-nav-link">模型定义</a><a href="conventions.html" class="mobile-nav-link">惯例</a><a href="connecting_to_the_database.html" class="mobile-nav-link">连接数据库</a><strong class="mobile-nav-title">CRUD 接口</strong><a href="create.html" class="mobile-nav-link">创建</a><a href="query.html" class="mobile-nav-link">查询</a><a href="update.html" class="mobile-nav-link">更新</a><a href="delete.html" class="mobile-nav-link">删除</a><strong class="mobile-nav-title">关联</strong><a href="belongs_to.html" class="mobile-nav-link">Belongs To</a><a href="has_one.html" class="mobile-nav-link">Has One</a><a href="has_many.html" class="mobile-nav-link">Has Many</a><a href="many_to_many.html" class="mobile-nav-link">Many To Many</a><a href="associations.html" class="mobile-nav-link">关联</a><a href="preload.html" class="mobile-nav-link">预加载</a><strong class="mobile-nav-title">教程</strong><a href="method_chaining.html" class="mobile-nav-link">链式操作</a><a href="error_handling.html" class="mobile-nav-link">错误处理</a><a href="hooks.html" class="mobile-nav-link">钩子</a><a href="transactions.html" class="mobile-nav-link">事务</a><a href="migration.html" class="mobile-nav-link">数据库迁移</a><a href="sql_builder.html" class="mobile-nav-link">原生 SQL 和 SQL 生成器</a><a href="generic_interface.html" class="mobile-nav-link">通用数据库接口</a><strong class="mobile-nav-title">高级主题</strong><a href="composite_primary_key.html" class="mobile-nav-link">复合主键</a><a href="write_plugins.html" class="mobile-nav-link">创建插件</a><a href="dialects.html" class="mobile-nav-link">GORM Dialects</a><a href="logger.html" class="mobile-nav-link">自定义Logger</a><a href="changelog.html" class="mobile-nav-link">更新日志</a><a href="/community.html" class="mobile-nav-link">社区</a><a href="/contribute.html" class="mobile-nav-link">贡献</a><a href="/contribute.html#Translate-this-site" class="mobile-nav-link">翻译当前页面</a>
     
   </div>
   <div id="mobile-lang-select-wrap">
-    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
     <select id="mobile-lang-select" data-canonical="docs/database.html">
       
-        <option value="zh_CN">简体中文</option>
+        <option value="zh_CN" selected>简体中文</option>
       
-        <option value="en" selected>English</option>
+        <option value="en">English</option>
       
     </select>
   </div>
