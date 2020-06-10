@@ -1,2 +1,2 @@
 # hexo-docs
-xx
+https://m1ku430.github.io/hexo-docs/
