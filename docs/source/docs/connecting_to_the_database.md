@@ -22,7 +22,7 @@ You can import other drivers in the same way.
 import _ "github.com/go-sql-driver/mysql"
 ```
 
-## Supported Databases
+## 所支持的数据库
 
 ### MySQL
 
@@ -45,12 +45,11 @@ func main() {
 ```
 
 If you want to specify the host, you need to use `()`. Example:
-```
-user:password@(localhost)/dbname?charset=utf8&parseTime=True&loc=Local
-```
- 
-### PostgreSQL
 
+    user:password@(localhost)/dbname?charset=utf8&parseTime=True&loc=Local
+    
+
+### PostgreSQL
 
 ```go
 import (
@@ -65,7 +64,6 @@ func main() {
 ```
 
 ### SQLite3
-
 
 **NOTE:** You can also use `:memory:` instead of a path to a file. This will tell SQLite to use a temporary database in system memory. (See [SQLite docs](https://www.sqlite.org/inmemorydb.html) for this.)
 
@@ -97,6 +95,6 @@ func main() {
 }
 ```
 
-## Unsupported Databases
+## 不支持的数据库
 
 GORM officially supports the databases listed above, but you can [write GORM dialects](dialects.html) for unsupported databases.

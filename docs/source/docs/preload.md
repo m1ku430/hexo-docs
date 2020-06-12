@@ -1,12 +1,12 @@
 ---
-title: Preloading (Eager loading)
+title: Preloading (预加载)
 layout: page
 ---
 
-## Preload
+## 预加载
 
 ```go
-// the struct User and Order for below code
+// 下面的例子会用到 User 和 Order 结构体
 type User struct {
   gorm.Model
   Username string
@@ -17,7 +17,7 @@ type Order struct {
   UserID uint
   Price float64
 }
-// the Preload function's param should be the main struct's field name
+// Preload 方法的参数应该是主结构体的字段名
 db.Preload("Orders").Find(&users)
 //// SELECT * FROM users;
 //// SELECT * FROM orders WHERE user_id IN (1,2,3,4);
@@ -37,32 +37,32 @@ db.Preload("Orders").Preload("Profile").Preload("Role").Find(&users)
 //// SELECT * FROM roles WHERE id IN (4,5,6); // belongs to
 ```
 
-## Auto Preloading
+## 自动预加载
 
-Always auto preload associations
+Gorm 默认总是会自动预加载关联记录
 
 ```go
 type User struct {
   gorm.Model
   Name       string
   CompanyID  uint
-  Company    Company `gorm:"PRELOAD:false"` // not preloaded
-  Role       Role                           // preloaded
+  Company    Company `gorm:"PRELOAD:false"` // 不会预加载
+  Role       Role                           // 预加载
 }
 
 db.Set("gorm:auto_preload", true).Find(&users)
 ```
 
-## Nested Preloading
+## 嵌套预加载
 
 ```go
 db.Preload("Orders.OrderItems").Find(&users)
 db.Preload("Orders", "state = ?", "paid").Preload("Orders.OrderItems").Find(&users)
 ```
 
-## Custom Preloading SQL
+## 自定义预加载 SQL
 
-You could custom preloading SQL by passing in `func(db *gorm.DB) *gorm.DB`, for example:
+你可以通过传入 `func(db *gorm.DB) *gorm.DB` 来自定义预加载，比如：
 
 ```go
 db.Preload("Orders", func(db *gorm.DB) *gorm.DB {

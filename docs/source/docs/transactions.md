@@ -1,22 +1,22 @@
 ---
-title: Transactions
+title: 事务
 layout: page
 ---
 
-GORM perform single `create`, `update`, `delete` operations in transactions by default to ensure database data integrity.
+GORM 默认会将单个的 `create`, `update`, `delete`操作封装在事务内进行处理，以确保数据的完整性。
 
-If you want to treat multiple `create`, `update`, `delete` as one atomic operation, `Transaction` is made for that.
+如果你想把多个 `create`, `update`, `delete` 操作作为一个原子操作，`Transaction` 就是用来完成这个的。
 
-## Transactions
+## 事务
 
-To perform a set of operations within a transaction, the general flow is as below.
+要在事务中执行一系列操作，通常您可以参照下面的流程来执行。
 
 ```go
 func CreateAnimals(db *gorm.DB) error {
   return db.Transaction(func(tx *gorm.DB) error {
-    // do some database operations in the transaction (use 'tx' from this point, not 'db')
+    // 在事务中做一些数据库操作 (这里应该使用 'tx' ，而不是 'db')
     if err := tx.Create(&Animal{Name: "Giraffe"}).Error; err != nil {
-      // return any error will rollback
+      // 返回任意 err ，整个事务都会 rollback
       return err
     }
 
@@ -24,35 +24,35 @@ func CreateAnimals(db *gorm.DB) error {
       return err
     }
 
-    // return nil will commit
+    // 返回 nil ，事务会 commit
     return nil
   })
 }
 ```
 
-## Transactions by manual
+## 手动控制的事务
 
 ```go
-// begin a transaction
+// 开始事务
 tx := db.Begin()
 
-// do some database operations in the transaction (use 'tx' from this point, not 'db')
+// 在事务中做一些数据库操作 (这里应该使用 'tx' ，而不是 'db')
 tx.Create(...)
 
 // ...
 
-// rollback the transaction in case of error
+// 有错误时，手动调用事务的 Rollback()
 tx.Rollback()
 
-// Or commit the transaction
+// 无错误时，手动调用事务的 Commit()
 tx.Commit()
 ```
 
-## A Specific Example
+## 一个具体的例子
 
 ```go
 func CreateAnimals(db *gorm.DB) error {
-  // Note the use of tx as the database handle once you are within a transaction
+  // 请注意，事务一旦开始，你就应该使用 tx 作为数据库句柄
   tx := db.Begin()
   defer func() {
     if r := recover(); r != nil {

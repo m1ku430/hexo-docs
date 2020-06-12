@@ -1,16 +1,16 @@
 ---
-title: Conventions
+title: 约定
 layout: page
 ---
 
 ## gorm.Model
 
-`gorm.Model` is a basic GoLang struct which includes the following fields: `ID`, `CreatedAt`, `UpdatedAt`, `DeletedAt`.
+`gorm.Model` 是一个包含了`ID`, `CreatedAt`, `UpdatedAt`, `DeletedAt`四个字段的GoLang结构体。
 
-It may be embedded into your model or you may build your own model without it.
+你可以将它嵌入到你自己的 Model 中，也可以完全使用自己的 Model。
 
 ```go
-// gorm.Model definition
+// gorm.Model 定义
 type Model struct {
   ID        uint `gorm:"primary_key"`
   CreatedAt time.Time
@@ -19,29 +19,30 @@ type Model struct {
 }
 
 // Inject fields `ID`, `CreatedAt`, `UpdatedAt`, `DeletedAt` into model `User`
+// 将 `ID`, `CreatedAt`, `UpdatedAt`, `DeletedAt`字段注入到`User`模型中
 type User struct {
   gorm.Model
   Name string
 }
 
-// Declaring model w/o gorm.Model
+// 不使用gorm.Model定义模型
 type User struct {
   ID   int
   Name string
 }
 ```
 
-## `ID` as Primary Key
+## `ID` 作为主键
 
-GORM uses any field with the name `ID` as the table's primary key by default.
+GORM 默认会使用名为`ID`的字段作为表的主键。
 
 ```go
 type User struct {
-  ID   string // field named `ID` will be used as primary field by default
+  ID   string // 名为`ID`的字段会默认作为表的主键
   Name string
 }
 
-// Set field `AnimalID` as primary field
+// 使用`AnimalID`作为主键
 type Animal struct {
   AnimalID int64 `gorm:"primary_key"`
   Name     string
@@ -49,14 +50,14 @@ type Animal struct {
 }
 ```
 
-## Pluralized Table Name
+## 表名（Table Name）
 
-Table name is the pluralized version of struct name.
+表名默认就是结构体名称的复数，例如：
 
 ```go
-type User struct {} // default table name is `users`
+type User struct {} // 默认表名是 `users`
 
-// Set User's table name to be `profiles`
+// 将 User 的表名设置为 `profiles`
 func (User) TableName() string {
   return "profiles"
 }
@@ -69,14 +70,14 @@ func (u User) TableName() string {
   }
 }
 
-// Disable table name's pluralization, if set to true, `User`'s table name will be `user`
+// 禁用默认表名的复数形式，如果置为 true，则 `User` 的默认表名是 `user`
 db.SingularTable(true)
 ```
 
-### Specifying The Table Name
+### 指定表名称
 
 ```go
-// Create `deleted_users` table with struct User's definition
+// 使用User结构体创建名为`deleted_users`的表
 db.Table("deleted_users").CreateTable(&User{})
 
 var deleted_users []User
@@ -87,9 +88,9 @@ db.Table("deleted_users").Where("name = ?", "jinzhu").Delete()
 //// DELETE FROM deleted_users WHERE name = 'jinzhu';
 ```
 
-### Change default tablenames
+### 更改默认表名称（table name）
 
-You can apply any rules on the default table name by defining the `DefaultTableNameHandler`.
+你可以通过定义`DefaultTableNameHandler`来设置默认表名的命名规则
 
 ```go
 gorm.DefaultTableNameHandler = func (db *gorm.DB, defaultTableName string) string  {
@@ -97,9 +98,9 @@ gorm.DefaultTableNameHandler = func (db *gorm.DB, defaultTableName string) strin
 }
 ```
 
-## Snake Case Column Name
+## 下划线分割命名（Snake Case）的列名
 
-Column names will be the field's name is lower snake case.
+列名由字段名称进行下划线分割来生成
 
 ```go
 type User struct {
@@ -117,29 +118,29 @@ type Animal struct {
 }
 ```
 
-## Timestamp Tracking
+## 时间点（Timestamp）跟踪
 
 ### CreatedAt
 
-For models having a `CreatedAt` field, it will be set to the time when the record is first created.
+如果模型有 `CreatedAt`字段，该字段的值将会是初次创建记录的时间。
 
 ```go
-db.Create(&user) // will set `CreatedAt` to current time
+db.Create(&user) // `CreatedAt`将会是当前时间
 
-// To change its value, you could use `Update`
+// 可以使用`Update`方法来改变`CreateAt`的值
 db.Model(&user).Update("CreatedAt", time.Now())
 ```
 
 ### UpdatedAt
 
-For models having an `UpdatedAt` field, it will be set to time when the record is updated.
+如果模型有`UpdatedAt`字段，该字段的值将会是每次更新记录的时间。
 
 ```go
-db.Save(&user) // will set `UpdatedAt` to current time
+db.Save(&user) // `UpdatedAt`将会是当前时间
 
-db.Model(&user).Update("name", "jinzhu") // will set `UpdatedAt` to current time
+db.Model(&user).Update("name", "jinzhu") // `UpdatedAt`将会是当前时间
 ```
 
 ### DeletedAt
 
-For models with a `DeletedAt` field, when `Delete` is called on that instance, it won't truly be deleted from database, but will set its `DeletedAt` field to the current time. Refer to [Soft Delete](delete.html#Soft-Delete)
+如果模型有`DeletedAt`字段，调用`Delete`删除该记录时，将会设置`DeletedAt`字段为当前时间，而不是直接将记录从数据库中删除。 了解什么是 [软删除](delete.html#Soft-Delete)
